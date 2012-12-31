@@ -411,7 +411,7 @@ func (d *decoder) mapping(n *node, out reflect.Value) (good bool) {
 	if out.Kind() == reflect.Interface {
 		// No type hints. Will have to use a generic map.
 		iface := out
-		out = settableValueOf(make(map[interface{}]interface{}))
+		out = settableValueOf(make(map[string]interface{}))
 		iface.Set(out)
 	}
 
